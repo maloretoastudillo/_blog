@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <p>
+    <%= form.label :thumbnail %>
+    <%= form.file_field :thumbnail %>
+  </p>
+
+  <p>
     <%= form.label :title %>
     <%= form.text_field :title %>
-  </div>
+  </p>
 
-  <div class="field">
+  <p>
     <%= form.label :content %>
     <%= form.text_area :content %>
-  </div>
+  </p>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  <p>
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </p>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit %>
 <% end %>
