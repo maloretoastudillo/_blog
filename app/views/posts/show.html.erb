@@ -22,6 +22,16 @@
 </ul>
 <% end %>
 
+<p>
+<% if @liked %>
+  <%= link_to '<i class="icon-heart"></i>'.html_safe, post_like_path(@post, @liked.id), method: :delete %>
+  <%= @post.likes.size %>
+<% else %>
+  <%= link_to '<i class="icon-heart-empty"></i>'.html_safe, post_likes_path(@post), method: :post %>
+  <%= @post.likes.size %>
+<% end %>
+</p>
+
 <%= link_to 'Edit', edit_post_path(@post) %>
 
 <h3>Comentarios</h3>
