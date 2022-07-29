@@ -1,5 +1,5 @@
 <li class="comment">
-    <% if current_user.likes_this_comment?(comment) %>
+    <% if current_user && current_user.likes_this_comment?(comment) %>
     <%= link_to '<i class="icon-heart"></i>'.html_safe, comment_like_path(comment, current_user.like_id(comment)), method: :delete %>
     <% else %>
     <%= link_to '<i class="icon-heart-empty"></i>'.html_safe, comment_likes_path(comment), method: :post %>
