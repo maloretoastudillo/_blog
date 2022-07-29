@@ -4,6 +4,7 @@
     <% else %>
     <%= link_to '<i class="icon-heart-empty"></i>'.html_safe, comment_likes_path(comment), method: :post %>
     <% end %>
+    <small><%= comment.likes.size %></small>
     <strong><%= comment.user.name %>: </strong>
     <%= comment.content %>
 </li>

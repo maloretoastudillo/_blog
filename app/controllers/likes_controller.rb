@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     before_action :set_like, only: %i[ destroy ]
 
     def create
-        @like = @likeable.likes.build(user: current_user)
+        @like = Like.new(likeable: @likeable, user: current_user)
 
         respond_to do |format|
             if @like.save
@@ -15,7 +15,7 @@ class LikesController < ApplicationController
     def destroy
         @like.destroy
 
-        redirect_to post_url(@return)
+        redirect_to @return
     end
 
     private
