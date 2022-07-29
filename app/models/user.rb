@@ -11,4 +11,12 @@ class User < ApplicationRecord
   def name
     "#{first_name} #{last_name}"
   end
+  
+  def like_id(comment)
+    comment.likes.find_by(user: self)
+  end
+
+  def likes_this_comment?(comment)
+    like_id(comment) || nil
+  end
 end

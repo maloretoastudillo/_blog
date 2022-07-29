@@ -37,15 +37,10 @@
 <h3>Comentarios</h3>
 
 <% if @post.comments.any? %>
-<ul>
-
+<ul class="comments_list">
   <% @post.comments.each do |comment| %>
-  <li>
-  <strong><%= comment.user.name %>: </strong>
-  <%= comment.content %>
-  </li>
+  <%= render 'comment', comment: comment %>
   <% end %>
-
 </ul>
 <% end %>
 

@@ -11,12 +11,6 @@ class PostsController < ApplicationController
     @comment = Comment.new(post: @post)
 
     @liked = current_user ? Like.find_by(user: current_user, likeable_type: 'Post') : nil
-
-    # if current_user
-    #   @liked = Like.find_by(user: current_user, likeable_type: 'Post')
-    # else
-    #   @liked = nil
-    # end
   end
 
   # GET /posts/new

@@ -7,7 +7,7 @@ class LikesController < ApplicationController
 
         respond_to do |format|
             if @like.save
-              format.html { redirect_to post_url(@likeable), notice: "Like was successfully created." }
+              format.html { redirect_to @return, notice: "Like was successfully created." }
             end
         end
     end
